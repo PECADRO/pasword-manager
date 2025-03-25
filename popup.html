@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Secure Password Manager</title>
+  <style>
+    body {
+      width: 300px;
+      padding: 15px;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #2c2c2c 0%, #18182b 50%, #2c1f4a 100%);
+      color: #ffffff;
+      min-height: 197px;
+      margin: 0;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input {
+      padding: 8px;
+      margin: 5px 0;
+      border-radius: 20px;
+      border: 1px solid #4a4a6b;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+    input::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    .hidden {
+      display: none;
+    }
+    .password-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 10px 0;
+      padding: 8px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+    }
+    .website-name {
+      flex-grow: 1;
+      margin-right: 10px;
+      color: #ffffff;
+    }
+    .button-group {
+      display: flex;
+      gap: 5px;
+    }
+    .show-btn {
+      background: #4CAF50;
+    }
+    .delete-btn {
+      background: #f44336;
+    }
+    .switch-form {
+      color: #4CAF50;
+      cursor: pointer;
+      text-decoration: underline;
+      margin-top: 10px;
+      text-align: center;
+    }
+    .action-buttons {
+      display: flex;
+      gap: 10px;
+    }
+    .randomizer-btn {
+      background: #f44336;
+    }
+    h3, h4 {
+      color: #ffffff;
+      margin-bottom: 15px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Login Section -->
+    <div id="loginSection">
+      <h3>Login</h3>
+      <input type="text" id="loginUsername" placeholder="Username">
+      <input type="password" id="loginPassword" placeholder="Password">
+      <button id="loginBtn">Login</button>
+      <p class="switch-form" id="showRegister">New user? Register here</p>
+    </div>
+
+    <!-- Register Section -->
+    <div id="registerSection" class="hidden">
+      <h3>Register</h3>
+      <input type="text" id="registerUsername" placeholder="Choose Username">
+      <input type="password" id="registerPassword" placeholder="Choose Password">
+      <input type="password" id="confirmPassword" placeholder="Confirm Password">
+      <button id="registerBtn">Register</button>
+      <p class="switch-form" id="showLogin">Already have an account? Login here</p>
+    </div>
+
+    <!-- Password Manager Section -->
+    <div id="managerSection" class="hidden">
+      <h3>Password Manager</h3>
+      <input type="text" id="website" placeholder="Website">
+      <input type="password" id="password" placeholder="Password">
+      <div class="action-buttons">
+        <button id="savePassword">Save Password</button>
+        <button id="randomizer" class="randomizer-btn">Randomizer</button>
+      </div>
+      
+      <h4>Stored Passwords</h4>
+      <div id="passwordList"></div>
+      <button id="logoutBtn" style="margin-top: 20px; background: #f44336;">Logout</button>
+    </div>
+  </div>
+  <script src="crypto.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html> 
