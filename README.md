@@ -6,8 +6,9 @@ A fun and educational password manager Chrome extension that demonstrates basic 
 
 ![Password Manager Screenshot](preview.png)
 
-## How Password Encryption Works
+*IMPORTANT* LOGIN DETAILS ARE NEVER SAVED, SO YOU MUST REMEMBER FIRST LOGIN DETAILS (Username/Password)
 
+## How Password Encryption Works
 This extension uses a simple but educational encryption approach:
 1. When you save a password, it gets transformed using our encryption rules:
    - Letters are reversed 
