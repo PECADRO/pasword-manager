@@ -4,7 +4,7 @@
 
 A fun and educational password manager Chrome extension that demonstrates basic encryption and password generation capabilities.
 
-![Password Manager Screenshot](screenshots/preview.png)
+![Password Manager Screenshot](preview.png)
 
 ## How Password Encryption Works
 
